@@ -10,11 +10,21 @@ const connect = function () {
   // interpret incoming data as text
   conn.setEncoding("utf8");
   conn.on("connect", () => {
-    console.log("connected");
+    console.log("Successfully connected");
+    conn.write("Name: MLT");
+    // setTimeout(() => {
+    //   conn.write("Move: up");
+    // }, 1000);
+    // setTimeout(() => {
+    //   conn.write("Move: down");
+    // }, 3000);
   });
-  conn.on("event name", () => {
-    console.log("An event occured");
-  })
+  // conn.on('connect', () => {
+    
+  // });
+  // conn.on("Name", () => {
+  //   console.log("An event occured");
+  // })
   return conn;
 };
 
